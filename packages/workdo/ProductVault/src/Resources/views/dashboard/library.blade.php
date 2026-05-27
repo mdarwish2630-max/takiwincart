@@ -44,12 +44,24 @@
                         @if($purchase->admin_notes)
                             <div class="alert alert-info small py-1 px-2 mb-2">{{ $purchase->admin_notes }}</div>
                         @endif
-                        <div class="d-flex gap-2">
+                                               <div class="d-flex gap-2 mt-2">
                             @if($purchase->payment_status === 'approved' && $purchase->product && $purchase->product->file_path)
                                 <a href="{{ asset($purchase->product->file_path) }}" download class="btn btn-sm btn-success" target="_blank">{{ __('Download') }}</a>
                             @endif
                             @if($purchase->receipt)
                                 <a href="{{ asset($purchase->receipt) }}" target="_blank" class="btn btn-sm btn-outline-primary">{{ __('Receipt') }}</a>
+                            @endif
+                            @if($purchase->payment_status === 'approved')
+                                @if($purchase->imported)
+                                    <a href="{{ route('vault-library.edit-import', $purchase->id) }}" class="btn btn-sm btn-warning">
+                                        <i class="fas fa-edit"></i> {{ __('Edit') }}
+                                    </a>
+                                    <span class="badge bg-success align-self-center small"><i class="fas fa-check"></i> {{ __('Imported') }}</span>
+                                @else
+                                    <a href="{{ route('vault-library.import-form', $purchase->id) }}" class="btn btn-sm btn-primary">
+                                        <i class="fas fa-file-import"></i> {{ __('Import') }}
+                                    </a>
+                                @endif
                             @endif
                         </div>
                     </div>

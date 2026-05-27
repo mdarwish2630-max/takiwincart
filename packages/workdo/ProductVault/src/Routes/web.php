@@ -36,4 +36,10 @@ Route::middleware(['web', 'auth'])->prefix('vault-library')->name('vault-library
     Route::get('/checkout/{id}', [VaultDashboardController::class, 'checkout'])->name('checkout');
     Route::post('/checkout/{id}', [VaultDashboardController::class, 'processCheckout'])->name('process-checkout');
     Route::post('/upload-receipt/{purchaseId}', [VaultDashboardController::class, 'uploadReceipt'])->name('upload-receipt');
+    // Import feature routes
+    Route::get('/import/{purchase}', [VaultDashboardController::class, 'importForm'])->name('import-form');
+    Route::post('/import/{purchase}', [VaultDashboardController::class, 'importProduct'])->name('import');
+    Route::get('/edit-import/{purchase}', [VaultDashboardController::class, 'editImport'])->name('edit-import');
+    Route::put('/update-import/{purchase}', [VaultDashboardController::class, 'updateImport'])->name('update-import');
+
 });

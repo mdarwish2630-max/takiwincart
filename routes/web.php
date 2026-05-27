@@ -779,4 +779,8 @@ Route::middleware(['web'])->group(function () {
 
   Route::post('/format-price', [ProductController::class, 'formatPrice'])->name('format.price');
   require __DIR__ . '/customer.php';
+  Route::get('/import/{purchaseId}', [VaultDashboardController::class, 'importForm'])->name('import-form');
+Route::post('/import/{purchaseId}', [VaultDashboardController::class, 'processImport'])->name('process-import');
+Route::get('/edit-import/{purchaseId}', [VaultDashboardController::class, 'editImport'])->name('edit-import');
+Route::put('/edit-import/{purchaseId}', [VaultDashboardController::class, 'updateImport'])->name('update-import');
 });
