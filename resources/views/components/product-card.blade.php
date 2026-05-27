@@ -1,0 +1,1 @@
+@props(['product', 'store'])

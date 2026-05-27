@@ -1,0 +1,89 @@
+{
+    "title": "Checkout",
+    "slug": "checkout",
+    "detail": "Checkout settings.",
+    "icon": "",
+    "sections": [
+        {
+            "title": "Banner",
+            "slug": "banner",
+            "key": "checkout_banner",
+            "settings": [
+                {
+                    "label": "On/Off",
+                    "key": "status",
+                    "type": "switch",
+                    "value": 1
+                },
+                {
+                    "label": "Title",
+                    "key": "title",
+                    "type": "text",
+                    "placeholder": "Enter here...",
+                    "value": "Checkout Page"
+                },
+                {
+                    "label": "Image",
+                    "key": "image",
+                    "type": "image",
+                    "placeholder": "Enter here...",
+                    "value": "{\"image\":\"themes/greentic/assets/images/common-banner.png\"}"
+                }
+            ]
+        },
+        {
+            "title": "Billing Details",
+            "slug": "billing_detail",
+            "key": "billing_detail",
+            "settings": [
+                {
+                    "label": "On/Off",
+                    "key": "status",
+                    "type": "switch",
+                    "value": 1
+                },
+                {
+                    "label": "Billing Title",
+                    "key": "title",
+                    "type": "text",
+                    "placeholder": "Enter here...",
+                    "value": "Billing Details"
+                },
+                {
+                    "label": "Shipping Title",
+                    "key": "shipping_title",
+                    "type": "text",
+                    "placeholder": "Enter here...",
+                    "value": "Shipping Details"
+                }
+            ]
+        },
+        {
+            "title": "Checkout",
+            "slug": "checkout",
+            "key": "checkout",
+            "settings": [
+                {
+                    "label": "On/Off",
+                    "key": "status",
+                    "type": "switch",
+                    "value": 1
+                },
+                {
+                    "label": "Title",
+                    "key": "title",
+                    "type": "text",
+                    "placeholder": "Enter here...",
+                    "value": "Checkout"
+                },
+                {
+                    "label": "Place Order",
+                    "key": "button",
+                    "type": "text",
+                    "placeholder": "Enter here...",
+                    "value": "Place Order"
+                }
+            ]
+        }
+    ]
+}

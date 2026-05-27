@@ -1,0 +1,105 @@
+{
+    "title": "Service",
+    "slug": "service",
+    "detail": "Service settings .",
+    "icon": "fas fa-arrows-up-to-line",
+    "sections": [
+        {
+            "title": "Service",
+            "slug": "form",
+            "key": "service",
+            "settings": [
+                {
+                    "label": "On/Off",
+                    "key": "status",
+                    "type": "switch",
+                    "value": 1
+                },
+                {
+                    "label": "Image",
+                    "key": "image_1",
+                    "type": "image",
+                    "placeholder": "Select file",
+                    "value": "{\"image\":\"packages/workdo/Fashionable/src/assets/images/policy1.png\"}"
+                },
+                {
+                    "label": "Title",
+                    "key": "title_1",
+                    "type": "text",
+                    "placeholder": "Enter here...",
+                    "value": "Free Shipping"
+                },
+                {
+                    "label": "Content",
+                    "key": "content_1",
+                    "type": "text",
+                    "placeholder": "Enter here...",
+                    "value": "Deliver To Door"
+                },
+                {
+                    "label": "Image",
+                    "key": "image_2",
+                    "type": "image",
+                    "placeholder": "Select file",
+                    "value": "{\"image\":\"packages/workdo/Fashionable/src/assets/images/policy2.png\"}"
+                },
+                {
+                    "label": "Title",
+                    "key": "title_2",
+                    "type": "text",
+                    "placeholder": "Enter here...",
+                    "value": "24*7 Support"
+                },
+                {
+                    "label": "Content",
+                    "key": "content_2",
+                    "type": "text",
+                    "placeholder": "Enter here...",
+                    "value": "In Safe Hands"
+                },
+                {
+                    "label": "Image",
+                    "key": "image_3",
+                    "type": "image",
+                    "placeholder": "Select file",
+                    "value": "{\"image\":\"packages/workdo/Fashionable/src/assets/images/policy3.png\"}"
+                },
+                {
+                    "label": "Title",
+                    "key": "title_3",
+                    "type": "text",
+                    "placeholder": "Enter here...",
+                    "value": "Big Saving"
+                },
+                {
+                    "label": "Content",
+                    "key": "content_3",
+                    "type": "text",
+                    "placeholder": "Enter here...",
+                    "value": "At Lowest Price"
+                },
+                {
+                    "label": "Image",
+                    "key": "image_4",
+                    "type": "image",
+                    "placeholder": "Select file",
+                    "value": "{\"image\":\"packages/workdo/Fashionable/src/assets/images/policy4.png\"}"
+                },
+                {
+                    "label": "Title",
+                    "key": "title_4",
+                    "type": "text",
+                    "placeholder": "Enter here...",
+                    "value": "Exchange Offer"
+                },
+                {
+                    "label": "Content",
+                    "key": "content_4",
+                    "type": "text",
+                    "placeholder": "Enter here...",
+                    "value": "Easy To Exchange"
+                }
+            ]
+        }
+    ]
+}

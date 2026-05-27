@@ -1,0 +1,56 @@
+# ============================================
+# ProductVault - Installation Steps
+# ============================================
+
+## Step 1: Extract ZIP
+Extract `ProductVault` folder to:
+```
+C:\xampp\htdocs\takwincart\packages\workdo\ProductVault\
+```
+
+So the path looks like:
+```
+C:\xampp\htdocs\takwincart\packages\workdo\ProductVault\composer.json
+C:\xampp\htdocs\takwincart\packages\workdo\ProductVault\module.json
+C:\xampp\htdocs\takwincart\packages\workdo\ProductVault\src\...
+```
+
+## Step 2: Run Setup (Database + Permissions)
+Open in browser:
+```
+http://localhost/takwincart/packages/workdo/ProductVault/setup.php
+```
+
+## Step 3: Clear Cache
+Open CMD:
+```
+rmdir /s /q C:\xampp\htdocs\takwincart\storage\framework\views
+rmdir /s /q C:\xampp\htdocs\takwincart\storage\framework\cache
+```
+
+## Step 4: Test
+```
+http://localhost/takwincart/product-vault
+```
+
+## Files Included (20 files):
+- module.json
+- composer.json
+- setup.php (DB tables + permissions)
+- src/Providers/ProductVaultServiceProvider.php
+- src/Providers/RouteServiceProvider.php
+- src/Providers/EventServiceProvider.php
+- src/Listeners/SuperAdminMenuListener.php
+- src/Routes/web.php
+- src/Routes/api.php
+- src/Http/Controllers/ProductVaultAdminController.php
+- src/Http/Controllers/VaultDashboardController.php
+- src/Entities/VaultProduct.php
+- src/Entities/VaultPurchase.php
+- src/Resources/views/admin/index.blade.php
+- src/Resources/views/admin/create.blade.php
+- src/Resources/views/admin/edit.blade.php
+- src/Resources/views/dashboard/index.blade.php
+- src/Resources/views/dashboard/show.blade.php
+- src/Resources/views/dashboard/checkout.blade.php
+- src/Resources/views/dashboard/library.blade.php

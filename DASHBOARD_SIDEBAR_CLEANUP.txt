@@ -1,0 +1,182 @@
+-- =====================================================
+-- تعديلات الداشبورد والقائمة الجانبية للمنتجات الرقمية فقط
+-- MaxCart Digital-Only Cleanup
+-- =====================================================
+
+
+== ============================================================================ ==
+== الملف 1: القائمة الجانبية (Sidebar)
+== المسارات المحتملة (جرب كل واحد):
+==   resources/views/backEnd/partials/_sidebar.blade.php   (الأكثر احتمالاً)
+==   resources/views/layouts/sidebar.blade.php
+==   resources/views/backEnd/partials/_menu.blade.php
+== ===================================================== ==
+
+افتح الملف وابحث عن هذه العناصر واحذفها أو علّقها:
+
+--- 1. احذف/علّق عنصر "Shipping" من القائمة ---
+
+ابحث عن أي من النصوص التالية:
+    Shipping
+    route('shipping.index')
+    Manage Shipping
+    shipping
+
+المحتمل أن يكون شكل العنصر كالتالي:
+    <li class="..."> ... Shipping ... </li>
+
+اضف {{--  --}} حول العنصر بالكامل لتعطيله، مثال:
+    {{-- <li class="..."> ... Shipping ... </li> --}}
+
+--- 2. احذف/علّق عنصر "Delivery Boy" من القائمة ---
+
+ابحث عن:
+    Delivery Boy
+    route('deliveryboy.index')
+    Manage Deliveryboy
+    deliveryboy
+
+واضف {{-- --}} حول العنصر:
+    {{-- <li class="..."> ... Delivery Boy ... </li> --}}
+
+--- 3. احذف/علّق عنصر "POS" من القائمة ---
+
+ابحث عن:
+    POS
+    route('pos.index')
+    Manage Pos
+    pos
+
+واضف {{-- --}} حول العنصر:
+    {{-- <li class="..."> ... POS ... </li> --}}
+
+
+== ============================================================================ ==
+== الملف 2: صفحة الداشبورد (Dashboard)
+== المسار المحتمل:
+==   resources/views/backEnd/dashboard.blade.php
+== ===================================================== ==
+
+افتح الملف وابحث عن التعديلات التالية:
+
+--- 1. احذف بطاقة "Order Shipped" ---
+
+ابحث عن النص:
+    Order Shipped
+
+ستجد بطاقة كاملة تحتوي هذا النص (غالباً مع أيقونة وعداد).
+ابحث عن بداية الـ div أو li الذي يحتويها واضف {{-- --}} حوله بالكامل.
+
+مثال (الشكل قد يختلف قليلاً):
+{{-- 
+<div class="... card-bg ...">
+    ...
+    Order Shipped
+    ...
+</div>
+--}}
+
+--- 2. غيّر نص "Order Delivered" إلى "Completed Orders" ---
+
+ابحث عن:
+    Order Delivered
+
+واستبدله بـ:
+    Completed Orders
+
+هذا لأن المنتجات الرقمية تُسلّم فوراً فالأفضل تسميتها "مكتملة" بدل "تم التوصيل".
+
+--- 3. احذف بطاقة "Storage Status" (اختياري) ---
+
+إذا كنت لا تريد إظهار حالة التخزين:
+ابحث عن:
+    Storage Status
+
+واحذف أو علّق البطاقة بالكامل.
+
+--- 4. في قسم "Latest Products" - أضف عمود للنوع الرقمي (اختياري) ---
+
+ابحث عن جدول Latest Products:
+    <table ... >
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Product</th>
+            <th>Price</th>
+
+أضف عمود جديد:
+            <th>Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($products as $product)
+        <tr>
+            ...
+            <td>{{ ucfirst($product->digital_type ?? 'file') }}</td>
+        </tr>
+        @endforeach
+    </tbody>
+
+
+== ============================================================================ ==
+== الملف 3: ملف اللغة (اختياري - لتغيير التسميات)
+== ===================================================== ==
+
+إذا كنت تستخدم ملفات الترجمة العربية:
+ابحث في:
+    resources/lang/ar/ 
+أو:
+    lang/ar/
+
+عن ملف يحتوي على:
+    'Order Shipped' => 'تم الشحن'
+
+واستبدله بـ:
+    'Order Delivered' => 'مكتمل'
+
+
+== ============================================================================ ==
+== الملف 4: إزالة Delivery Boy من Orders
+== الملف: resources/views/order/index.blade.php (أو مشابه)
+== ===================================================== ==
+
+في صفحة عرض الطلبات، ابحث عن أي عمود أو فلتر يحتوي على:
+    Delivery Boy
+    deliveryboy
+    Assigned Delivery
+
+واحذف أو أخفِ هذا العمود/الفلتر.
+
+
+== ============================================================================ ==
+== الملف 5: إزالة الشحن من صفحة تفاصيل الطلب (Admin)
+== الملف: resources/views/order/show.blade.php (أو resources/views/order/detail.blade.php)
+== ===================================================== ==
+
+ابحث عن قسم يعرض:
+    Shipping Information
+    Shipping Address
+    Delivery Address
+    Tracking Number
+    Delivery Boy
+
+واحذف أو أخفِ هذه الأقسام بإضافة {{-- --}} حولها.
+
+
+== ============================================================================ ==
+== نصائح للبحث السريع:
+== ===================================================== ==
+
+إذا كنت تستخدم محرر مثل VS Code:
+1. افتح مجلد المشروع في VS Code
+2. اضغط Ctrl + Shift + F (بحث في كل الملفات)
+3. ابحث عن "Shipping" أو "Delivery Boy" أو "POS"
+4. راجع كل نتيجة وقرر ما إذا كانت تخص الواجهة (Views) أم لا
+5. عدّل فقط ملفات Views
+
+=== الأدوات المفيدة للبحث ===
+
+من CMD في مجلد المشروع:
+    findstr /s /i "shipping" resources\views\backEnd\partials\*.blade.php
+    findstr /s /i "delivery boy" resources\views\backEnd\partials\*.blade.php
+    findstr /s /i "Order Shipped" resources\views\backEnd\dashboard.blade.php

@@ -1,0 +1,132 @@
+{
+    "title": "Cart",
+    "slug": "cart",
+    "detail": "Cart Page settings.",
+    "icon": "",
+    "sections": [
+        {
+            "title": "Banner",
+            "slug": "banner",
+            "key": "cart_banner",
+            "settings": [
+                {
+                    "label": "On/Off",
+                    "key": "status",
+                    "type": "switch",
+                    "value": 1
+                },
+                {
+                    "label": "Title",
+                    "key": "title",
+                    "type": "text",
+                    "placeholder": "Enter here...",
+                    "value": "Cart Details"
+                },
+                {
+                    "label": "Image",
+                    "key": "image",
+                    "type": "image",
+                    "placeholder": "Enter here...",
+                    "value": "{\"image\":\"themes/stylique/assets/images/common-banner.png\"}"
+                }
+            ]
+        },
+        {
+            "title": "Cart",
+            "slug": "cart",
+            "key": "cart",
+            "settings": [
+                {
+                    "label": "On/Off",
+                    "key": "status",
+                    "type": "switch",
+                    "value": 1
+                },
+                {
+                    "label": "Product Page Button",
+                    "key": "product_button_text",
+                    "type": "text",
+                    "placeholder": "Enter here...",
+                    "value": "Continue Shopping"
+                },
+                {
+                    "label": "Product Page Button",
+                    "key": "product_button_link",
+                    "type": "text",
+                    "placeholder": "Enter here...",
+                    "value": "#"
+                },
+                {
+                    "label": "Clear Cart",
+                    "key": "clear_button_text",
+                    "type": "text",
+                    "placeholder": "Enter here...",
+                    "value": "Clear Cart"
+                },
+                {
+                    "label": "Order Summary",
+                    "key": "summary",
+                    "type": "text",
+                    "placeholder": "Enter here...",
+                    "value": "Order Summary"
+                },
+                {
+                    "label": "Subtotal",
+                    "key": "subtotal",
+                    "type": "text",
+                    "placeholder": "Enter here...",
+                    "value": "Subtotal"
+                },
+                {
+                    "label": "Shipping",
+                    "key": "shipping",
+                    "type": "text",
+                    "placeholder": "Enter here...",
+                    "value": "Shipping"
+                },                
+                {
+                    "label": "Tax",
+                    "key": "tax",
+                    "type": "text",
+                    "placeholder": "Enter here...",
+                    "value": "Tax"
+                },
+                {
+                    "label": "Total",
+                    "key": "total",
+                    "type": "text",
+                    "placeholder": "Enter here...",
+                    "value": "Total"
+                },
+                {
+                    "label": "Coupon Code",
+                    "key": "coupon_code",
+                    "type": "text",
+                    "placeholder": "Enter here...",
+                    "value": "Coupon Code"
+                },
+                {
+                    "label": "Apply",
+                    "key": "apply",
+                    "type": "text",
+                    "placeholder": "Enter here...",
+                    "value": "Apply"
+                },
+                {
+                    "label": "Checkout",
+                    "key": "checkout",
+                    "type": "text",
+                    "placeholder": "Enter here...",
+                    "value": "Proceed to Checkout"
+                },
+                {
+                    "label": "Checkout Link",
+                    "key": "checkout_button_link",
+                    "type": "text",
+                    "placeholder": "Enter here...",
+                    "value": "#"
+                }
+            ]
+        }
+    ]
+}

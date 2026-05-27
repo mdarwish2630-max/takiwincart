@@ -1,0 +1,130 @@
+/*
+ * MaxCart Digital Products - Admin Panel CSS Overrides
+ * This file hides physical product elements across all admin pages.
+ * Include this in layouts/app.blade.php
+ */
+
+/* ============================================
+   PRODUCT CREATE/EDIT PAGE
+   ============================================ */
+
+/* Hide Shipping field */
+label[for="shipping_id"],
+select#shipping_id,
+.col-sm-6.col-12:has(select[name="shipping_id"]) {
+    display: none !important;
+}
+
+/* Hide Weight field */
+label:has(+ input[name="product_weight"]),
+.col-sm-6.col-12.product-weight:has(input[name="product_weight"]):not(:has(input[name="price"])) {
+    display: none !important;
+}
+
+/* Hide entire Product Stock section */
+.product-stock-div {
+    display: none !important;
+}
+
+/* Hide stock inner options */
+.product-stock-top-inner {
+    display: none !important;
+}
+
+/* Hide stock bottom */
+.product-stock-bottom {
+    display: none !important;
+}
+
+/* Make "Downloadable Product" section more prominent */
+#downloadable-product-div {
+    border: 2px solid #4361ee !important;
+    border-radius: 8px;
+    padding: 15px !important;
+    margin-bottom: 15px;
+    background-color: #f0f4ff;
+}
+
+#downloadable-product-div label {
+    font-weight: bold !important;
+    color: #4361ee !important;
+    font-size: 14px !important;
+}
+
+/* ============================================
+   DASHBOARD PAGE
+   ============================================ */
+
+/* Hide "Order Shipped" card */
+.dash-order-status .col-xxl-3:has(.lucide-truck),
+.dash-order-status > .row > .col-xxl-3:nth-child(5) {
+    display: none !important;
+}
+
+/* ============================================
+   ORDER DETAIL/VIEW PAGES
+   ============================================ */
+
+/* Hide shipping label button */
+a[href*="shippinglabel"] {
+    display: none !important;
+}
+
+/* Hide shipping info sections in order view */
+.shipping-information,
+.card:has(h3:contains("Shipping Information")),
+.card:has(h3:contains("Shipping Address")) {
+    display: none !important;
+}
+
+/* ============================================
+   HEADER (remove POS link)
+   ============================================ */
+
+/* Hide POS link in header if it exists */
+a[href*="pos.index"] {
+    display: none !important;
+}
+
+/* ============================================
+   SETTINGS - Hide shipping-related tabs
+   ============================================ */
+
+/* In settings page, hide shipping method tab content if present */
+.setting-tab:has(a[href*="shipping"]),
+li.nav-item a:has(span:contains("Shipping")) {
+    display: none !important;
+}
+
+/* ============================================
+   GENERAL - Hide delivery boy references
+   ============================================ */
+
+a[href*="deliveryboy"],
+.menu-item:has(a[href*="deliveryboy"]) {
+    display: none !important;
+}
+
+/* ============================================
+   DIGITAL PRODUCT BADGE IN ADMIN
+   ============================================ */
+
+/* Add info banner on product page */
+.product-page-info::before {
+    content: "Digital Product Mode - Shipping, Weight & Stock fields are hidden. Use 'Downloadable Product' to upload files.";
+    display: block;
+    background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.product-page-info::after {
+    content: "";
+    display: block;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,1 @@
+{"name":"workdo/product-vault","description":"ProductVault","type":"library","version":"1.0.0","require":{"php":"^8.0"},"autoload":{"psr-4":{"Workdo\\ProductVault\\":"src/"}},"extra":{"laravel":{"providers":["Workdo\\ProductVault\\Providers\\ProductVaultServiceProvider"]}},"minimum-stability":"dev","prefer-stable":true}

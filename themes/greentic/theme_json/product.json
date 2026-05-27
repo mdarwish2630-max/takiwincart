@@ -1,0 +1,42 @@
+{
+    "title": "Product",
+    "slug": "product",
+    "detail": "Manage product page settings.",
+    "icon": "fas fa-box",
+    "sections": [
+        {
+            "title": "Product Page",
+            "slug": "product page",
+            "key": "product_page",
+            "settings": [
+                {
+                    "label": "On/Off",
+                    "key": "status",
+                    "type": "switch",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "title": "Social List",
+            "slug": "product_page_social_list",
+            "key": "product_page_social_list",
+            "settings": [
+                {
+                    "label": "On/Off",
+                    "key": "status",
+                    "type": "switch",
+                    "value": 1
+                },
+                {
+                    "label": "Slider",
+                    "key": "repeater",
+                    "type": "slider",
+                    "fields": ["icon","link"],
+                    "value": "[{\"icon\":\"fab fa-facebook-f\",\"link\":\"https://www.facebook.com/\"},{\"icon\":\"fab fa-x-twitter\",\"link\":\"https://x.com/\"},{\"icon\":\"fab fa-instagram\",\"link\":\"https://www.instagram.com/\"},{\"icon\":\"fab fa-pinterest\",\"link\":\"https://in.pinterest.com/\"}]"
+              }
+                
+            ]
+        }
+    ]
+}
